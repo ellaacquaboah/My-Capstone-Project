@@ -23,13 +23,39 @@ function App() {
           <img src={search} alt="search" className='w-[1.5rem] h-[1.5rem]' />
           <input onKeyUp={(e) => {
             if (e.key === 'Enter') {
-              // search for city name when I click on the enter button
+              // sumit the form
               submitCity()
             }
           }} type="text" placeholder='Search city' className='focus:outline-none w-full text-[#212121] text-lg' value={input} onChange={e => setInput(e.target.value)} />
         </div>
       </nav>
-      
+      <BackgroundLayout></BackgroundLayout>
+      <main className='w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center'>
+        <WeatherCard
+          place={thisLocation}
+          windspeed={weather.wspd}
+          humidity={weather.humidity}
+          temperature={weather.temp}
+          heatIndex={weather.heatindex}
+          iconString={weather.conditions}
+          conditions={weather.conditions}
+        />
+
+        <div className='flex justify-center gap-8 flex-wrap w-[60%]'>
+          {
+            values?.slice(1, 7).map(curr => {
+              return (
+                <MiniCard
+                  key={curr.datetime}
+                  time={curr.datetime}
+                  temp={curr.temp}
+                  iconString={curr.conditions}
+                />
+              )
+            })
+          }
+        </div>
+      </main>
     </div>
   )
 }
