@@ -19,15 +19,8 @@ export const useDate = () => {
     const day = today.toLocaleDateString(locale, {weekday: 'long'})
    // get today's date
     const date = `${day}, ${today.getDate()}, ${today.toLocaleDateString(locale, {month: 'short'})}\n\n`
-   // get today's time
-<<<<<<< HEAD
-    const time = new Date().toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' });
-    
-
-   
-=======
+   // get today's time   
     const time = new Date().toLocaleTimeString('en-US',{hour:'numeric',hour12: true, minute: 'numeric'}); 
->>>>>>> 3f0f5e87e5f27d0670b62946b2a49403683fb657
 
     return {
         date , time
