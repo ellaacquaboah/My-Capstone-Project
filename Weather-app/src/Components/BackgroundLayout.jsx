@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useStateContext } from '../Context'
 //images
-import Clear from '../assets/images/Clear.jpg'
+import Bright from '../assets/images/Clear.jpg'
 import Fog from '../assets/images/fog.png'
 import Cloudy from '../assets/images/Cloudy.jpg'
 import Rainy from '../assets/images/Rainy.jpg'
@@ -12,13 +12,13 @@ import Sunny from '../assets/images/Sunny.jpg'
 const BackgroundLayout = () => {
 
   const { weather } = useStateContext()
-  const [image, setImage] = useState(Clear)
+  const [image, setImage] = useState(Bright)
 
   useEffect(() => {
     if (weather.conditions) {
       let imageString = weather.conditions
       if (imageString.toLowerCase().includes('clear')) {
-        setImage(Clear)
+        setImage(Bright)
       } else if (imageString.toLowerCase().includes('cloud')) {
         setImage(Cloudy)
       } else if (imageString.toLowerCase().includes('rain') || imageString.toLowerCase().includes('shower')) {
