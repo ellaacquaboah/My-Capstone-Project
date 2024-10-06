@@ -13,7 +13,7 @@ export const StateContextProvider = ({ children }) => {
   const fetchLocation = async (city) => {
     const options = {
       method: 'GET',
-      url: 'http://api.openweathermap.org/geo/1.0/direct',
+      url: 'https://api.openweathermap.org/geo/1.0/direct',
       params: {
         q: city,
         limit: 1,
