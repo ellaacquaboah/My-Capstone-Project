@@ -6,7 +6,7 @@ const StateContext = createContext();
 export const StateContextProvider = ({ children }) => {
   const [weather, setWeather] = useState({});
   const [values, setValues] = useState([]);
-  const [place, setPlace] = useState('Accra');
+  const [place, setPlace] = useState('London');
   const [thisLocation, setLocation] = useState('');
 
   // Function to get coordinates of a place
